@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Read Local Json File</title>
+<script type="text/javascript" src="contacts.js"></script>
+</head>
+<body>
+
+<div>
+    <table>
+        <tr>
+	    <th>
+               FirstName:
+            </th>
+	    <td id="first">
+            </td>
+	</tr>
+        <tr>
+	    <th>
+               LastName:
+            </th>
+	    <td id="last">
+            </td>
+	</tr>
+        <tr>
+	    <td>
+            </td>
+	</tr>
+        <tr>
+	    <td>
+            </td>
+	</tr>
+        <tr>
+	    <td>
+            </td>
+	</tr>
+    </table>
+</div>
+
+</body>
+<script>
+getJSON('./contacts.json', function(err, data) {
+  if (err != null) {
+    alert('Something went wrong: ' + err.message);
+  } else {
+    alert('Your Json result is:  ' + data.firstName);
+    document.getElementById("first").innerText = data.firstName;
+    document.getElementById("last").innerText = data.lastName;
+    for (var key in data) {
+    if (data.hasOwnProperty(key)) {
+        alert(key + " -> " + data[key]);
+            for (var inner_key in data[key]) {
+            	        alert(key + " inner_key -> " + data[key][inner_key]);
+             }    
+    }
+   }
+  }
+});
+</script>
+</html>

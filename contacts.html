@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Read Local Json File</title>
+<script type="text/javascript" src="contacts.js"></script>
+</head>
+<body>
+
+<div>
+    <table>
+        <tr>
+	    <th>
+               Contact Details 
+            </th>
+	</tr>
+        <tr>
+	    <td id="first">
+            </td>
+	</tr>
+    </table>
+</div>
+
+</body>
+<script>
+var full_details = "";
+getJSON('./contacts.json', function(err, data) {
+  if (err != null) {
+    alert('Something went wrong: ' + err.message);
+  } else {
+  traverse_it(data)
+  document.getElementById("first").innerHTML = full_details;
+
+  }
+})
+
+;
+
+function traverse_it(obj){
+    for(var prop in obj){
+        if(typeof obj[prop]=='object'){
+            // object
+            traverse_it(obj[prop]);
+        }else{
+            // something else
+            full_details = full_details + "<br />" + ' '+prop+' : '+obj[prop]+'.';
+            alert('The value of '+prop+' is '+obj[prop]+'.');
+        }
+    }
+  
+}
+
+</script>
+</html>

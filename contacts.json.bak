@@ -1,0 +1,23 @@
+{
+  "firstName": "Karunakar",
+  "lastName": "Revuri",
+  "age": 30,
+  "address": "",
+			  {
+  "streetAddress": "144 Vincent rd, Koramangla",
+  "city": "Bangalore",
+  "state": "KA",
+  "postalCode": "500001"
+			  },
+  "contactDetails":
+			  [
+			  {
+  "type": "personal",
+  "number": "09832209761"
+			  },
+			  {
+  "type": "email",
+  "number": "karunakar.revuri@intl.att.com"
+			  }
+	  		  ]
+ }
